@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>민지수 이력서</title>
+    <link rel="stylesheet" href="resume_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ===== navbar: 로고 + 메뉴 ===== -->
+    <nav class="sidebar">
+        <div class="sidebar-logo">
+            <a href="#resume-header"><i class="fa-solid fa-file-lines"></i> Min Jisoo</a>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#introduce">소개</a></li>
+            <li><a href="#experience">경험</a></li>
+            <li><a href="#education">학력</a></li>
+            <li><a href="#contact">연락하기</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <!-- ===== 1. 이름, 기본 정보, 사진 ===== -->
+            <header id="resume-header">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>민지수</h1>
+                        <div class="contacts">
+                            <span><i class="fa-solid fa-graduation-cap"></i> 생명정보학 전공</span>
+                            <span><i class="fa-solid fa-location-dot"></i> 대전</span>
+                            <a href="https://github.com/jsjs256256-rgb" target="_blank">
+                                <i class="fa-brands fa-github"></i> GitHub 바로가기
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="profile.png" alt="민지수 프로필 사진">
+                    </div>
+                </div>
+            </header>
+
+            <!-- ===== 2. 자기소개 ===== -->
+            <section id="introduce">
+                <h2>Introduce</h2>
+                <p>
+                    안녕하세요, 임상 데이터를 분석해 약의 효과와 안전성을 확인하는 근거를 만드는 일을 하고 싶은 민지수라고 합니다.
+                </p>
+
+                <h3 class="sub-title">관심 분야</h3>
+                <div class="tag-list">
+                    <span class="tag">임상 데이터 분석</span>
+                    <span class="tag">약물 유효성·안전성 평가</span>
+                </div>
+            </section>
+
+            <!-- ===== 3. 경험 ===== -->
+            <section id="experience">
+                <h2>Experience</h2>
+
+                <div class="experience-item">
+                    <div class="experience-info">
+                        <span class="company">OZ코딩스쿨 AI 헬스케어 부트캠프</span>
+                        <span class="period">2026.08 ~ 현재</span>
+                    </div>
+                    <p class="role">임상·의료 데이터 분석과 머신러닝 모델링 교육 과정 (2027.02 수료 예정)</p>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">난임 환자 임신 성공 여부 예측 모델 </span>
+                            <span class="project-period">2026.10</span>
+                        </div>
+                        <ul class="details">
+                            <li>난임 시술 데이터로 출산까지 이어지는 임신 성공 여부를 예측하는 분류 모델 개발</li>
+                            <li>피처 수정과 여러 모델의 최종 블렌딩 담당</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">SAE 환자 스타틴과 30일 생존 예측</span>
+                            <span class="project-period">2026.10 ~ 2026.11</span>
+                        </div>
+                        <ul class="details">
+                            <li>MIMIC-IV 중환자 데이터로 패혈증 관련 뇌병증 환자의 스타틴 사용과 30일 생존의 연관성 분석</li>
+                            <li>피처 정의와 선별, 예측 모델 개선 담당</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">Pet Health AI: 반려견 비만 관리 서비스 기획 </span>
+                            <span class="project-period">2026.11</span>
+                        </div>
+                        <ul class="details">
+                            <li>AI Hub 반려견 건강정보 데이터로 비만 위험 예측 모델과 서비스 기획</li>
+                            <li>분석 담당: 확률 보정, 병원별 성능 분석, 요인 가설검정</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 4. 학력 ===== -->
+            <section id="education">
+                <h2>Education</h2>
+                <table class="info-table">
+                    <tr>
+                        <th>20XX ~ 20XX</th>
+                        <td>[OO대학교] 생명정보학 학사</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- ===== 5. 메일 발송 폼 ===== -->
+            <section id="contact">
+                <h2>Send Cover Letter</h2>
+                <form class="mail-form" action="" method="get">
+                    <div class="form-field">
+                        <label for="emailInput">담당자 이메일</label>
+                        <input id="emailInput" type="email" name="email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="companyInput">회사명</label>
+                        <input id="companyInput" type="text" name="company" placeholder="(주)Paper Company" required>
+                    </div>
+                    <button type="submit">이력서 전송하기</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- ===== 하단 ===== -->
+        <footer class="footer">Copyright &#169; 민지수</footer>
+    </div>
+</body>
+</html>

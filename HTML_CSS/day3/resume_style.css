@@ -1,0 +1,342 @@
+/* ===== 전체 ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-left: 200px;               /* 왼쪽 메뉴 자리만큼 비우기 */
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    color: inherit;                    /* 링크 색을 부모 글자색과 같게 */
+    text-decoration: none;
+}
+
+/* ===== navbar (왼쪽 고정 메뉴) ===== */
+.sidebar {
+    position: fixed;                   /* 스크롤해도 제자리 */
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    padding: 40px 16px;
+    color: #fff;
+    background-color: #333;
+
+    display: flex;                     /* 로고와 메뉴를 세로로 배치 */
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-logo {
+    padding: 0 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;            /* 메뉴를 세로로 */
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-menu a {
+    display: block;                    /* 글자뿐 아니라 칸 전체를 클릭 영역으로 */
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);   /* 마우스를 올리면 칸에 배경 */
+}
+
+/* ===== 가운데 흰 카드 ===== */
+.container {
+    max-width: 800px;
+    min-height: calc(100vh - 80px);    /* 내용이 적어도 화면 높이만큼 */
+    margin: 40px auto;                 /* 좌우 auto = 가운데 */
+    padding: 40px;
+    border-radius: 8px;
+    background-color: #fff;
+
+    display: flex;                     /* main과 footer를 세로로 */
+    flex-direction: column;
+}
+
+main {
+    flex: 1;                           /* 남은 공간을 차지 → footer가 맨 아래로 */
+}
+
+/* ===== 이름, 기본 정보, 사진 ===== */
+#resume-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;    /* 글은 왼쪽, 사진은 오른쪽 */
+    align-items: center;
+    gap: 20px;
+}
+
+#resume-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    color: #222;
+}
+
+.contacts {
+    display: flex;                     /* 연락처 항목을 가로로 */
+    flex-wrap: wrap;                   /* 좁아지면 다음 줄로 */
+    gap: 8px 20px;                     /* 위아래 8px, 좌우 20px 간격 */
+    font-size: 0.95em;
+    color: #666;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+}
+
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #eee;
+    border-radius: 50%;                /* 동그란 사진 */
+    object-fit: cover;
+}
+
+/* ===== 섹션 제목 ===== */
+main h2 {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 5px solid #333;       /* 왼쪽 굵은 선 */
+    font-size: 1.5em;
+    color: #222;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* ===== 자기소개, 관심 분야 ===== */
+#introduce p {
+    font-size: 1.05em;
+    color: #555;
+}
+
+.sub-title {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;                   /* 넘치면 다음 줄로 */
+    gap: 10px;
+}
+
+.tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #476282;
+    background-color: #f0f2f5;
+}
+
+/* ===== 경험 ===== */
+.experience-info {
+    display: flex;
+    justify-content: space-between;    /* 이름은 왼쪽, 기간은 오른쪽 */
+    align-items: baseline;
+    gap: 10px;
+}
+
+.company {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #222;
+}
+
+.period,
+.project-period {
+    font-size: 0.9em;
+    color: #888;
+    white-space: nowrap;               /* 기간은 줄바꿈 없이 */
+}
+
+.role {
+    margin-top: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.project {
+    margin-top: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #eee;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.project-name {
+    font-weight: 600;
+    color: #444;
+}
+
+.details {
+    margin: 5px 0 0 0;
+    padding-left: 20px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* ===== 학력 표 ===== */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th {
+    width: 150px;
+    padding: 10px 0;
+    font-size: 0.9em;
+    font-weight: 400;
+    text-align: left;
+    color: #888;
+}
+
+.info-table td {
+    padding: 10px 0;
+    font-weight: 500;
+    color: #444;
+}
+
+/* ===== 메일 발송 폼 ===== */
+.mail-form {
+    display: flex;
+    align-items: flex-end;             /* 입력 칸과 버튼의 아래쪽 맞추기 */
+    gap: 10px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;            /* label 위, input 아래 */
+    flex: 1;                           /* 두 칸이 남은 폭을 나눠 가짐 */
+}
+
+.form-field label {
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.form-field input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mail-form button {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.mail-form button:hover {
+    background-color: #555;
+}
+
+/* ===== 하단 ===== */
+.footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.8em;
+    text-align: center;
+    color: #999;
+}
+
+/* ===== 반응형 1: 화면 폭 768px 이하 (태블릿) ===== */
+@media (max-width: 768px) {
+    body {
+        padding-left: 0;               /* 메뉴 자리 비우지 않기 */
+    }
+
+    .sidebar {
+        position: static;              /* 고정 해제 → 맨 위 가로 navbar */
+        width: 100%;
+        height: auto;
+        padding: 12px 16px;
+        flex-direction: row;           /* 로고와 메뉴를 가로로 */
+        justify-content: space-between;/* 로고는 왼쪽, 메뉴는 오른쪽 */
+        align-items: center;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;           /* 메뉴를 가로로 */
+        gap: 4px;
+    }
+
+    .container {
+        margin: 20px 12px;
+        padding: 24px;
+    }
+
+    .header-content {
+        flex-direction: column-reverse;/* 사진 위, 글 아래 */
+        align-items: flex-start;
+    }
+
+    .mail-form {
+        flex-direction: column;        /* 폼을 세로로 쌓기 */
+        align-items: stretch;
+    }
+}
+
+/* ===== 반응형 2: 화면 폭 480px 이하 (모바일) ===== */
+@media (max-width: 480px) {
+    .sidebar {
+        flex-direction: column;        /* 로고 위, 메뉴 아래 */
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .sidebar-menu {
+        justify-content: space-around; /* 메뉴 4개를 고르게 */
+        text-align: center;
+    }
+
+    .container {
+        margin: 12px 8px;
+        padding: 16px;
+    }
+
+    .experience-info,
+    .project-header {
+        flex-direction: column;        /* 제목 위, 기간 아래 */
+    }
+
+    .info-table th {
+        width: 100px;
+    }
+}
