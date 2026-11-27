@@ -1,0 +1,243 @@
+body {
+    font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.sub-title {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin: 0 0 20px;
+}
+
+/* ===== 탭 ===== */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.tab-btn.active {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.count {
+    display: inline-block;
+    min-width: 20px;
+    margin-left: 4px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background-color: #f1c40f;
+    color: #2c3e50;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ===== 검색 + 정렬 ===== */
+.toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+#searchInput {
+    flex: 1;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#sortSelect {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+#searchInput:focus,
+#sortSelect:focus {
+    outline: none;
+    border-color: #2c3e50;
+}
+
+/* ===== 상태 표시줄 ===== */
+.status {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 13px;
+    padding: 0 4px;
+}
+
+/* ===== 표 ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #555;
+    font-weight: 600;
+    position: sticky;   /* 스크롤해도 제목 줄이 위에 고정 */
+    top: 0;
+}
+
+/* 숫자는 오른쪽 정렬 + 글자 폭을 같게 해서 자릿수 맞추기 */
+.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.symbol {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.quote {
+    color: #aaa;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.fav-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.fav-btn:hover {
+    transform: scale(1.2);
+}
+
+.fav-btn.active {
+    color: #f1c40f;
+}
+
+/* 상승: 빨강, 하락: 파랑 (국내 거래소 표시 방식) */
+.up {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.down {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* 가격이 바뀐 순간 배경이 잠깐 깜빡임 */
+.flash-up {
+    animation: flashUp 0.8s ease-out;
+}
+
+.flash-down {
+    animation: flashDown 0.8s ease-out;
+}
+
+@keyframes flashUp {
+    from { background-color: rgba(231, 76, 60, 0.25); }
+    to   { background-color: transparent; }
+}
+
+@keyframes flashDown {
+    from { background-color: rgba(52, 152, 219, 0.25); }
+    to   { background-color: transparent; }
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== 좁은 화면 ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 16px 8px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #searchInput {
+        max-width: none;
+    }
+
+    th, td {
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+
+    /* 좁은 화면에서는 최고가, 최저가 열 숨기기 */
+    th:nth-child(5), td:nth-child(5),
+    th:nth-child(6), td:nth-child(6) {
+        display: none;
+    }
+}

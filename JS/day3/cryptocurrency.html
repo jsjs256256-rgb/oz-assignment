@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암호화폐 가격 변동 추적기</title>
+    <link rel="stylesheet" href="cryptocurrency_style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>실시간 암호화폐 가격 변동 추적기</h1>
+        <p class="sub-title">Binance USDT 마켓 · 1초마다 자동 업데이트</p>
+
+        <!-- 탭: 전체보기 / 관심항목 -->
+        <div class="tabs">
+            <button id="allTab" class="tab-btn active">전체보기</button>
+            <button id="favoritesTab" class="tab-btn">관심항목 <span id="favCount" class="count">0</span></button>
+        </div>
+
+        <!-- 검색 + 정렬 -->
+        <div class="toolbar">
+            <input type="text" id="searchInput" placeholder="심볼 검색 (예: BTC, ETHUSDT)">
+            <select id="sortSelect">
+                <option value="default">기본 순서</option>
+                <option value="changeDesc">상승률 높은 순</option>
+                <option value="changeAsc">하락률 높은 순</option>
+                <option value="volumeDesc">거래대금 많은 순</option>
+            </select>
+        </div>
+
+        <!-- 상태 표시줄: 종목 수, 마지막 업데이트 시각 -->
+        <div class="status">
+            <span id="resultCount">-</span>
+            <span id="updatedAt">-</span>
+        </div>
+
+        <div id="loading" class="loading">데이터를 불러오는 중...</div>
+        <div id="emptyMessage" class="loading hidden"></div>
+
+        <table id="cryptoTable" class="hidden">
+            <thead>
+                <tr>
+                    <th>관심</th>
+                    <th>심볼</th>
+                    <th class="num">현재가</th>
+                    <th class="num">24시간 변동률</th>
+                    <th class="num">최고가</th>
+                    <th class="num">최저가</th>
+                </tr>
+            </thead>
+            <tbody id="cryptoList">
+                <!-- 데이터가 여기에 동적으로 추가됩니다 -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="cryptocurrency.js"></script>
+</body>
+</html>
